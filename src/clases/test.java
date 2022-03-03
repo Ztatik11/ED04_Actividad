@@ -38,18 +38,18 @@ public class test {
 		System.out.println();
 
 		// Creación de bolsas de empleo vacías
-		BolsaEmpleo b1 = new BolsaEmpleo(new ArrayList<>(), "Bolsa trabajo 01");
+		BolsaEmpleo bolsa1 = new BolsaEmpleo(new ArrayList<>(), "Bolsa trabajo 01");
 		BolsaEmpleo bolsa02 = new BolsaEmpleo(new ArrayList<>(), "Bolsa trabajo 02");
 		BolsaEmpleo bolsa03 = new BolsaEmpleo(new ArrayList<>(), "Bolsa trabajo 03");
 
 		List<BolsaEmpleo> listaDeBolsas = new ArrayList<>();
-		listaDeBolsas.add(b1);
+		listaDeBolsas.add(bolsa1);
 		listaDeBolsas.add(bolsa02);
 		listaDeBolsas.add(bolsa03);
 
 		// Añade la persona1 a la bolsa01
-		b1.anyadirPersona(persona1, listaDeBolsas);
-		System.out.println(b1.toString());
+		bolsa1.anyadirPersona(persona1, listaDeBolsas);
+		System.out.println(bolsa1.toString());
 		System.out.println(
 				"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
 		System.out.println();

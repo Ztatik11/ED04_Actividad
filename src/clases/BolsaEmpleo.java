@@ -5,28 +5,27 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BolsaEmpleo {
-	private List<Persona> listaVacantes;
-	private String nombreBolsa;
+	private BolsaEmpleoData data = new BolsaEmpleoData();
 
 	public BolsaEmpleo(List<Persona> listaVacantes, String nombreBolsa) {
-		this.listaVacantes = new ArrayList<Persona>();
-		this.nombreBolsa = nombreBolsa;
+		this.data.listaVacantes = new ArrayList<Persona>();
+		this.data.nombreBolsa = nombreBolsa;
 	}
 
 	public List<Persona> getListaVacantes() {
-		return listaVacantes;
+		return data.listaVacantes;
 	}
 
 	public void setListaVacantes(List<Persona> listaVacantes) {
-		this.listaVacantes = listaVacantes;
+		this.data.listaVacantes = listaVacantes;
 	}
 
 	public String getNombreBolsa() {
-		return nombreBolsa;
+		return data.nombreBolsa;
 	}
 
 	public void setNombreBolsa(String nombreBolsa) {
-		this.nombreBolsa = nombreBolsa;
+		this.data.nombreBolsa = nombreBolsa;
 	}
 
 // Método que añade una persona a la bolsa de trabajo si es mayor de edad y no se encuentra en ninguna otra bolsa de trabajo
@@ -35,19 +34,19 @@ public class BolsaEmpleo {
 		boolean estaEnBolsa = false;
 		if (persona.obtenerEdad() >= 18) {
 			for (BolsaEmpleo bolsa : listaDeBolsas) {
-				if (bolsa.listaVacantes.contains(persona)) {
+				if (bolsa.data.listaVacantes.contains(persona)) {
 					estaEnBolsa = true;
 				}
 			}
 			if (!estaEnBolsa) {
-				this.listaVacantes.add(persona);
+				this.data.listaVacantes.add(persona);
 			}
 		}
 	}
 
 	@Override
 	public String toString() {
-		return "Bolsa de empleo: " + nombreBolsa + "\n" + Arrays.toString(this.listaVacantes.toArray());
+		return "Bolsa de empleo: " + data.nombreBolsa + "\n" + Arrays.toString(this.data.listaVacantes.toArray());
 	}
 
 }
